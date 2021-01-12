@@ -10,6 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>READ DATA (DATABASE MYSQL)</title>
+        <!-- untuk datatable -->
+        <link rel="stylesheet" type="text/css" href="Jquery/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="Jquery/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="Jquery/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function() {
+                $('#datatable').DataTable();
+            });
+        </script>
     </head>
     <body>
         <%@page import="function.*,java.util.*"%>
@@ -19,7 +28,7 @@
             List<fuser> list = user.getAllRecords();
             request.setAttribute("list", list);
         %>
-        <table border="1" width="90%">
+        <table border="1" width="90%" id="datatable" class="display">
         <tr>
             <th>Nama</th>
             <th>Username</th>
